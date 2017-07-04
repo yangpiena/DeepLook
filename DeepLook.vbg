@@ -1,0 +1,4 @@
+VBGROUP 5.0
+Project=DeepLook Addin\DeepLook Addin.vbp
+StartupProject=DeepLook\DeepLook.vbp
+Project=File Registerer EXE\FileRegister.vbp

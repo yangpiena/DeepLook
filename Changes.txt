@@ -1,0 +1,158 @@
+				 =================================
+					DEEPLOOK CHANGE LOG
+				 =================================
+
+-----------------------------------------------------------------------------------------------
+                         	NEW FEATURES IN THIS VERSION
+	Engine specific additions/changes are for the VB6 Scan engine unless indicated
+-----------------------------------------------------------------------------------------------
+   * New Copy Required Files XML reports generated with file copy
+   * "Show All" menu item disabled if "Allow only one open Treeview Branch at a time" set
+   * Graphics update - new header and some treeview/list images
+   * Analyse button no longer enabled when Clear Recent Scan list item selected
+   * Is System DLL function rewritten, system DLL names are now stored in a string table in the
+     RES file (IDs 100+)
+   * Re-wrote Malicious code scanner to fix a flaw, keywords now stored in RES file string table
+     also (IDs 200+)
+   * Fixed small bug in my 3D line control
+   * Arrays instead of hidden listboxes used to store Potentially Malicious Code and Used Fonts
+   * Substituted arrays with index variables instead of collections - MUCH faster now
+   * New option to bring the currently scanned file to the top of the recent scanned files list
+   * Fixed bug in "CheckIsFunction" where static/friend function names were prefixed by "Function"
+     on the treeview
+   * Added very simple bubble sort algorithm to sort potentially malicious code, SPFs and used
+     fonts alphabetically
+   * Bug in the UVS CheckIsProperty routine fixed (test against incorrect variable stopped
+     property recognition)
+   * Added option to alphabetically sort Subs, Functions and properties in the treeview
+   * Malicious keywords are read out of the string table into a buffer array for speed when scan begins
+   * Expand Ref/Com menu item now expands CreateObject statements too
+   * Fixed bug where VBP project filenames were clipped in the copy files treeview
+   * SPF pie chart now shows the fraction of blank lines correctly
+   * Unused Variable Scanner now ignores variables that are commented out (both declarations and use)
+   * Fixed bug where UVS not scanning projects in a project group file
+   * Changed the XML parser engine to locate the tables correctly, for some reason it failed on
+     group projects
+   * .NET projects now show a "not avaliable" message on the XML page
+   * Badly modified progressbar so that both the project and project group scan progress can be shown
+     on the same progressbar
+   * Replaced two variants with string arrays for speed
+   * (Non-code) Directory structure of project files changed to a more orderly system
+   * (Non-code) DeepLook FAQ added
+   * Quick-scan DeepLook VB6 addin created
+   * Fixed bug where all DLLs recognised as system (I forgot that StrComp returns 0 if identical, not 1)
+   * User can now optionally skip the copying of project dependancies via checkboxes for each item
+
+-----------------------------------------------------------------------------------------------
+                             NEW FEATURES IN PREVIOUS VERSIONS
+	Engine specific additions/changes are for the VB6 Scan engine unless indicated
+-----------------------------------------------------------------------------------------------
+   * Fixed many minor bugs
+   * Added support for designer (.dsr) files
+   * Added support for line numbers
+   * Made heaps of speed tweaks, DeepLook can do more operations in half the time
+   * Added new "statements" section which counts such lines as FOR, IF and DO
+   * Now counts Const, Type and Enum statements
+   * Shifted Potentially Malicious Code section to inside each individual file
+   * Shifted repeated code to one sub for easy management and tweaking
+   * Fixed major Sub/Func/Prop line counting bug
+   * Added a "Project Totals" node for total project lines, etc.
+   * Added Declared DLL File Info
+   * Added support for events
+   * Added total lines in the group node
+   * Empty routines are now coloured red
+   * Now colours different types of SPFs in different colours
+   * Ultra-increased node cleanup routine per project in group projects
+   * Reports are always generated due to a user-request
+   * External subs are now always coloured grey due to new colouring scheme
+   * Dramatically reduced treeview clearing time
+   * Added new treeview right-click menu to highlight special nodes
+   * Added a new "Copy Report"
+   * Fixed group non-relative file not found error
+   * Fixed inability to scan blank files
+   * Removed option to use XP style progressbar
+   * Added a better progress bar, removed AdvancedProgressBar control
+   * Better PMC Scanner Engine
+   * Unused Variable Checker
+   * Mode tab on the results form
+   * Scanning phases shown on the SelProject form
+   * Unused variable scanner fixed
+   * A registering BAT file is now also created (alternative to FileRegister.exe)
+   * Speed enhancements by tweaking the code (e.g. frequent use of ElseIf to speed up scanning)
+   * Program now correctly interprets multiple variable declares on a single line
+   * ByVal used on Parameters to increase scan speed
+   * Colour coded global/local unused variables
+   * Warnings for old EXE/Project Files added
+   * Added speed increase for FixPrjTreeViewItems sub
+   * Added naming conventions on all files and controls
+   * Added pie charts for graphical representation of data
+   * Fixed several small problems of data not showing
+   * Fixed reports - report header now shows correctly and .NET file reports now work
+   * Fixed bug where first line in each file is ignored
+   * Replaced Charmelion button control with LaVolpe buttons due to memory leak in Charmelion control
+   * Files with projects as references now scan correctly
+   * Added "Used Fonts" for each project - now user can easily see which fonts are used in a project
+   * Fixed many other memory leaks - thanks to LaVolpe
+   * The "Show Individual Sub/Function/Property lines" option now works
+   * Re-enabled the close button on forms, fixed bug where DeepLook was not exiting correctly when
+     ALT+F4 used
+   * Fixed bug where DeepLook not exiting properly when in the middle of scanning
+   * Swapped simple progressbar with a disabled LaVolpe button - edited LaVolpe code to show
+     status text as enabled
+   * Rewrote the FixRelPath sub to correct relative paths that don't only have "\.."'s at the start/end
+   * UVC Scanning engine now works for non-unique variable names
+   * Now reports both total control count and control count (not including all array objects)
+   * Empty SPFs now show the correct Red ForeColour when not hilighted
+   * User can now save the Unused Variable List as a text file
+   * Added overwrite warnings when saving report files
+   * Added option to only allow one open Treeview Branch at a time
+   * Added group information to reports when a group file is scanned
+   * Fixed a little bit of faulty logic in the IsHybridLine function
+   * Now the entire file line statistics does NOT count blank lines outside a SPF
+   * Added event functionality to Class Modules
+   * Fixed Unused Variable Scanner not recognising multiple line continuations
+   * Fixed project non-value line bug
+   * Fixed scan failure upon non-unique DLL declaration
+   * Changed the filename text entry for the SelProject form to a image combo box
+   * Now ignores declarations which are encased inside "#If False Then" statements (used to
+     protect the case of Type/Enum members)
+   * Replaced my two simple line controls with a simple auto-orientating GDI line control I made
+   * Added XML report generation
+   * Fixed some path finding errors
+   * Changed hard-coded file numbers to FreeFile numbers
+   * Made small code optimisations to improve performance
+   * Fixed unused variable scanner not recognising declares in SPFs that have preceeding spaces
+   * Fixed unused variable scanner not recognising used variables that are declared with a type
+   * Fixed unused variable scanner not checking the same line for other occurances of a possibly
+     used variable when a possible occurance returns a negative result
+     marker but are used without type marker
+   * "Save Unused Variables List" button is now disabled when no unused variables found
+   * Added omitted Expand all Designers memnu to the "+ Items" popup menu on the results form
+   * Single VB Items now scan for unused variables correctly
+   * Public Events are now recognised correctly
+   * GetTickCount API used for more acurate scan time duration text
+   * DeepLook now automatically scans anything that is passed on its command line (drag-drop
+     scanning of projects/files now possible)
+   * Changed the look of the Options screen, added new option to hide the scanned file paths in
+     the select project image combo box
+   * Implemented the "GetInputState" API to speed up processing; DoEvents now only called when
+     there are messages waiting in the keyboard/mouse buffers or the next file loaded
+   * Windows can now be moved by click-dragging their backgrounds, great for busy environments
+   * Fixed variable counting bug (types/enums counted as variables if declared as public)
+   * Support added for multi-dimensional (indexed) arrays
+   * Added support for Private/Public Static functions and Subroutines
+   * Support added for Friend Static SPFs and Friend Properties
+   * Code is now more robust against errors, most of the On Error Resume Next statements removed
+   * Added function to convert a DeepLook report text file to a XML file by "scanning" it
+   * Made several minor code improvements (thanks to Roger Gilchrist)
+   * Changed all the occurances of "{var} <> vbNullString" to "LenB({var})"
+   * ByVal statements removed (default is ByRef with is actually faster)
+   * Changed Treeview indentation so that more nodes are visible in a smaller space
+   * Added icons to the "tab" buttons on the results form
+   * Added the webbrowser component so XML reports can be viewed from inside DeepLook
+   * Fixed Unused Variable Scanner not correctly detecting singles typed with a "!" ID-symbol
+   * Case protection IF detection changed so comments on the #if line don't interfere with scan
+   * New author pic (VERY important :D) from early 2005 because the old one was from mid-2003
+   * Updated XML template slightly
+   * Fixed bug where XML template not being saved along with XML report
+-----------------------------------------------------------------------------------------------

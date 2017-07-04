@@ -1,0 +1,6 @@
+SearchReg = 110, 110, 974, 588, C, 154, 154, 777, 632, C
+ClsSearch = 44, 44, 908, 522, C
+ClsFiles = 22, 22, 886, 500, C
+ClsFile = 0, 0, 864, 478, C
+ClsEventLog = 220, 220, 1084, 698, C
+ModCallStack = 198, 198, 1062, 676, C
