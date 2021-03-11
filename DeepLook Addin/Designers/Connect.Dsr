@@ -1,11 +1,11 @@
 VERSION 5.00
 Begin {AC0714F6-3D04-11D1-AE7D-00A0C90F26F4} Connect 
-   ClientHeight    =   10470
+   ClientHeight    =   13995
    ClientLeft      =   1740
    ClientTop       =   1545
-   ClientWidth     =   16260
-   _ExtentX        =   28681
-   _ExtentY        =   18468
+   ClientWidth     =   23400
+   _ExtentX        =   41275
+   _ExtentY        =   24686
    _Version        =   393216
    Description     =   "Allows one-click scanning of open projects with DeepLook."
    DisplayName     =   "DeepLook Helper Addin"
